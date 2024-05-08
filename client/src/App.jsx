@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Navbar } from "./components";
+import { Home } from "./pages";
+import { Routes, Route } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -17,6 +19,10 @@ export default function App() {
   return (
     <Container>
       <Navbar />
+
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+      </Routes>
     </Container>
   );
 }
