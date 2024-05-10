@@ -1,20 +1,43 @@
 import {
   BtnContainer,
   Logo,
+  LogoText,
+  MobileMenu,
+  Mobileicon,
+  Mobileicons,
   Nav,
   NavContainer,
   NavItems,
   NavLogo,
   Navlink,
+  TextButton,
 } from "../styles/Nav";
 import Button from "./Button";
+import LogoImg from "../assets/logo.png";
+import {
+  SearchRounded,
+  FavoriteBorder,
+  ShoppingCart,
+  MenuRounded,
+  ShoppingCartOutlined,
+} from "@mui/icons-material";
+import { useState } from "react";
+import { Avatar } from "@mui/material";
 
 export default function Navbar() {
+  const user = true;
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Nav>
       <NavContainer>
+        <Mobileicon>
+          <MenuRounded style={{ color: "inherit" }} />
+        </Mobileicon>
+
         <NavLogo>
-          <Logo />
+          <Logo src={LogoImg} />
+          <LogoText>Jibruk</LogoText>
         </NavLogo>
 
         <NavItems>
@@ -25,7 +48,81 @@ export default function Navbar() {
           <Navlink to="/contact">Contact</Navlink>
         </NavItems>
 
+        {isOpen && (
+          <MobileMenu isOpen={isOpen}>
+            <Navlink to="/" onClick={() => setIsOpen(!isOpen)}>
+              Home
+            </Navlink>
+            <Navlink onClick={() => setIsOpen(!isOpen)} to="/Shop">
+              Shop
+            </Navlink>
+            <Navlink onClick={() => setIsOpen(!isOpen)} to="/New_Arrivals">
+              New Arrivals
+            </Navlink>
+            <Navlink onClick={() => setIsOpen(!isOpen)} to="/Orders">
+              Orders
+            </Navlink>
+            <Navlink onClick={() => setIsOpen(!isOpen)} to="/Contact">
+              Contact
+            </Navlink>
+            {user ? (
+              <Button text="Logout" small />
+            ) : (
+              <div
+                style={{
+                  flex: "1",
+                  display: "flex",
+                  gap: "12px",
+                }}
+              >
+                <Button text="Sign Up" outlined small />
+                <Button text="Sign In" small />
+              </div>
+            )}
+          </MobileMenu>
+        )}
+
+        <Mobileicons>
+          <Navlink to="/search">
+            <SearchRounded sx={{ color: "inherit", fontSize: "30px" }} />
+          </Navlink>
+
+          {user ? (
+            <>
+              <Navlink to="/favorite">
+                <FavoriteBorder sx={{ color: "inherit", fontSize: "28px" }} />
+              </Navlink>
+              <Navlink to="/cart">
+                <ShoppingCartOutlined
+                  sx={{ color: "inherit", fontSize: "28px" }}
+                />
+              </Navlink>
+              <Avatar
+                src={user?.img}
+                sx={{
+                  color: "inherit",
+                  fontSize: "28px",
+                }}
+              >
+                Miki
+              </Avatar>
+              <TextButton>Logout</TextButton>
+            </>
+          ) : (
+            <Button text="SignIn" small />
+          )}
+        </Mobileicons>
+
         <BtnContainer>
+          <Navlink to="/search">
+            <SearchRounded sx={{ color: "inherit", fontSize: "30px" }} />
+          </Navlink>
+          <Navlink to="/favorite">
+            <FavoriteBorder sx={{ color: "inherit", fontSize: "30px" }} />
+          </Navlink>
+          <Navlink to="/cart">
+            <ShoppingCart sx={{ color: "inherit", fontSize: "30px" }} />
+          </Navlink>
           <Button text="SignIn" small />
         </BtnContainer>
       </NavContainer>
