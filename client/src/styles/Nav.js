@@ -129,4 +129,5 @@ export const Mobileicon = styled.div`
     display: flex;
     align-items: center;
   }
+  cursor: pointer;
 `;

@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <Nav>
       <NavContainer>
-        <Mobileicon>
+        <Mobileicon onClick={() => setIsOpen(!isOpen)}>
           <MenuRounded style={{ color: "inherit" }} />
         </Mobileicon>
 
