@@ -54,3 +54,20 @@ export const CloseButton = styled.div`
     background: ${({ theme }) => theme.primary + 20};
   }
 `;
+export const Text = styled.p`
+  display: flex;
+  gap: 8px;
+  font-size: 16px;
+  text-align: center;
+  color: ${({ theme }) => theme.text_secondary};
+  margin-top: 16px;
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
+`;
+export const TextButton = styled.div`
+  color: ${({ theme }) => theme.primary};
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+`;
