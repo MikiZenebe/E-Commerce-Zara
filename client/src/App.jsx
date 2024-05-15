@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Navbar } from "./components";
-import { Home } from "./pages";
+import { Auth, Home } from "./pages";
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -16,13 +17,17 @@ const Container = styled.div`
 `;
 
 export default function App() {
+  const [openAuth, setOpenAuth] = useState(false);
+
   return (
     <Container>
-      <Navbar />
+      <Navbar setOpenAuth={setOpenAuth} openAuth={openAuth} />
 
       <Routes>
         <Route path="/" exact element={<Home />} />
       </Routes>
+
+      {openAuth && <Auth openAuth={openAuth} setOpenAuth={setOpenAuth} />}
     </Container>
   );
 }

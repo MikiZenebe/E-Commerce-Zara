@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   BtnContainer,
   Logo,
@@ -24,8 +25,8 @@ import {
 import { useState } from "react";
 import { Avatar } from "@mui/material";
 
-export default function Navbar() {
-  const user = true;
+export default function Navbar({ setOpenAuth, openAuth }) {
+  const user = false;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -75,8 +76,17 @@ export default function Navbar() {
                   gap: "12px",
                 }}
               >
-                <Button text="Sign Up" outlined small />
-                <Button text="Sign In" small />
+                <Button
+                  text="Sign Up"
+                  outlined
+                  small
+                  onClick={() => setOpenAuth(!openAuth)}
+                />
+                <Button
+                  text="Sign In"
+                  small
+                  onClick={() => setOpenAuth(!openAuth)}
+                />
               </div>
             )}
           </MobileMenu>
@@ -109,7 +119,11 @@ export default function Navbar() {
               <TextButton>Logout</TextButton>
             </>
           ) : (
-            <Button text="SignIn" small />
+            <Button
+              text="SignIn"
+              small
+              onClick={() => setOpenAuth(!openAuth)}
+            />
           )}
         </Mobileicons>
 
@@ -123,7 +137,7 @@ export default function Navbar() {
           <Navlink to="/cart">
             <ShoppingCart sx={{ color: "inherit", fontSize: "30px" }} />
           </Navlink>
-          <Button text="SignIn" small />
+          <Button text="SignIn" small onClick={() => setOpenAuth(!openAuth)} />
         </BtnContainer>
       </NavContainer>
     </Nav>
