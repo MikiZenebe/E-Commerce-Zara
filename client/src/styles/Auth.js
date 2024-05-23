@@ -71,3 +71,22 @@ export const TextButton = styled.div`
   transition: all 0.3s ease;
   font-weight: 600;
 `;
+
+//SignIn & SignUp
+export const SignContainer = styled.div`
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+`;
+export const Title = styled.div`
+  font-size: 30px;
+  font-weight: 800;
+  color: ${({ theme }) => theme.primary};
+`;
+export const Span = styled.div`
+  font-size: 16px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text_secondary + 90};
+`;

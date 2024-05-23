@@ -42,7 +42,7 @@ export default function Auth({ openAuth, setOpenAuth }) {
               <SignUp />
               <Text>
                 Already have an account?{" "}
-                <TextButton onClick={() => setLogin(true)}>Sign Up</TextButton>
+                <TextButton onClick={() => setLogin(true)}>Sign In</TextButton>
               </Text>
             </>
           )}
