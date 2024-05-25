@@ -47,6 +47,7 @@ export const CardWrapper = styled.div`
 `;
 
 //Product Category
+
 export const Card = styled.div`
   width: 250px;
   display: flex;
@@ -122,4 +123,118 @@ export const Sale = styled.div`
   @media (max-width: 600px) {
     font-size: 10px;
   }
+`;
+
+//Product Card
+export const ProdMenu = styled.div`
+  position: absolute;
+  z-index: 10;
+  color: ${({ theme }) => theme.text_primary};
+  top: 14px;
+  right: 14px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease-out;
+`;
+
+export const ProdTop = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 6px;
+  transition: all 0.3s ease-out;
+  &:hover {
+    background-color: ${({ theme }) => theme.primary};
+  }
+
+  &:hover ${Image} {
+    opacity: 0.9;
+  }
+  &:hover ${ProdMenu} {
+    display: flex;
+  }
+`;
+// export const ProdTop = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   position: relative;
+//   border-radius: 6px;
+//   transition: all 0.3s ease-out;
+//   &:hover {
+//     background-color: ${({ theme }) => theme.primary};
+//   }
+
+//   &:hover ${Image} {
+//     opacity: 0.9;
+//   }
+//   &:hover ${Menu} {
+//     display: flex;
+//   }
+// `;
+export const MenuItem = styled.div`
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  background: white;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+`;
+
+export const Rate = styled.div`
+  position: absolute;
+  z-index: 10;
+  color: ${({ theme }) => theme.text_primary};
+  bottom: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: white;
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+`;
+export const Details = styled.div`
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  padding: 4px 10px;
+`;
+export const ProdTitle = styled.div`
+  font-size: 16px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.text_primary};
+`;
+export const Desc = styled.div`
+  font-size: 16px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text_primary};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+export const Price = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.text_primary};
+`;
+export const Span = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.text_secondary + 60};
+  text-decoration: line-through;
+  text-decoration-color: ${({ theme }) => theme.text_secondary + 50};
+`;
+export const Percent = styled.div`
+  font-size: 12px;
+  font-weight: 500;
+  color: green;
 `;
