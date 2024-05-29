@@ -77,9 +77,9 @@ export const SelectableItem = styled.div`
   ${({ selected, theme }) =>
     selected &&
     `
-  border: 1px solid ${theme.text_primary};
-  color: ${theme.text_primary};
-  background: ${theme.text_primary + 30};
+  border: 1px solid black;
+  color: white;
+  background: black;
   font-weight: 500;
   `}
 `;
