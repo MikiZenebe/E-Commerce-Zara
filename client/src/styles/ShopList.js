@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   padding: 20px 30px;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: hidden;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -16,13 +16,12 @@ export const Container = styled.div`
 `;
 export const Filters = styled.div`
   width: 100%;
-  height: fit-content;
+  height: 100%;
   overflow-y: scroll;
-  overflow-x: hidden;
   padding: 20px 16px;
   @media (min-width: 768px) {
     height: 100%;
-    width: 230px;
+    width: 300px;
     overflow-y: scroll;
   }
 `;
@@ -30,10 +29,10 @@ export const FilterSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 12px;
+  padding: 10px;
 `;
 export const Title = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
 `;
 export const Menu = styled.div`
@@ -60,11 +59,13 @@ export const CardWrapper = styled.div`
     gap: 14px;
   }
 `;
+
 export const Item = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 `;
+
 export const SelectableItem = styled.div`
   cursor: pointer;
   display: flex;
@@ -74,7 +75,7 @@ export const SelectableItem = styled.div`
   padding: 2px 8px;
   font-size: 16px;
   width: fit-content;
-  ${({ selected, theme }) =>
+  ${({ selected }) =>
     selected &&
     `
   border: 1px solid black;
@@ -82,4 +83,8 @@ export const SelectableItem = styled.div`
   background: black;
   font-weight: 500;
   `}
+
+  &:hover {
+    border: 1px solid black;
+  }
 `;

@@ -10,7 +10,7 @@ import {
   Title,
 } from "../styles/ShopList";
 import { ProductCard } from "../components/index";
-import { category, filter } from "../utils/data";
+import { filter } from "../utils/data";
 import { Slider } from "@mui/material";
 import { useState } from "react";
 
@@ -96,12 +96,15 @@ export default function ShopList() {
             );
           })}
         </Menu>
-        <Products>
-          <CardWrapper>
-            <ProductCard />
-          </CardWrapper>
-        </Products>
       </Filters>
+
+      <Products>
+        <CardWrapper>
+          <ProductCard />
+          <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
+          <ProductCard /> <ProductCard />
+        </CardWrapper>
+      </Products>
     </Container>
   );
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Navbar } from "./components";
-import { Auth, Home, ShopList } from "./pages";
+import { Auth, Favourite, Home, ShopList } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
@@ -26,6 +26,7 @@ export default function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/shop" exact element={<ShopList />} />
+        <Route path="/favorite" exact element={<Favourite />} />
       </Routes>
 
       {openAuth && <Auth openAuth={openAuth} setOpenAuth={setOpenAuth} />}
