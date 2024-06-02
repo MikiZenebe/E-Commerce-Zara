@@ -22,6 +22,7 @@ export const Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 28px;
+  align-items: center;
 `;
 export const Img = styled.img`
   width: 100%;
