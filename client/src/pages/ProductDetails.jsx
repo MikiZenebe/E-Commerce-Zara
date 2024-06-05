@@ -15,7 +15,7 @@ import {
   Title,
   Wrapper,
 } from "../styles/ProductDetail";
-import { CircularProgress, Rating } from "@mui/material";
+import { Rating } from "@mui/material";
 import Sample from "../assets/sample.jpg";
 import Button from "../components/Button";
 import { FavoriteRounded } from "@mui/icons-material";
