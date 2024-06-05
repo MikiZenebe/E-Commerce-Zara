@@ -4,5 +4,6 @@ import Favourite from "./Favourite";
 import Home from "./Home";
 import NewArrival from "./NewArrival";
 import ShopList from "./ShopList";
+import ProductDetails from "./ProductDetails";
 
-export { Auth, Cart, Favourite, Home, NewArrival, ShopList };
+export { Auth, Cart, Favourite, Home, NewArrival, ShopList, ProductDetails };
